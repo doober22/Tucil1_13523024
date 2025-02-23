@@ -1,0 +1,9 @@
+A A G G G G 
+A B F E E E 
+B B F F E E 
+D D F H H H 
+I D C C C J 
+I I I C J J 
+
+Attempts: 1912
+Time taken: 23 ms

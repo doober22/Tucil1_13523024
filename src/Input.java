@@ -11,12 +11,6 @@ public class Input {
         Input input = new Input();
         input.readInputFromFile("input.txt");
         input.printStoredPieces();
-        Piece test = input.getPieces().get(0);
-        test.rotate();
-        input.printStoredPieces();
-        test.mirror();
-        input.printStoredPieces();
-
     }
 
     public void readInputFromFile(String filename) {
@@ -46,7 +40,7 @@ public class Input {
                     shapeCoords = new  ArrayList<>();
                     currentChar = firstChar;
                     i = 0;
-                    if (pieces.size() > p-2) { //kalo kelebihan (tetep diitung yang ga lebih)
+                    if (pieces.size() > p-1) { //kalo kelebihan (tetep diitung yang ga lebih)
                         System.err.println("Too many pieces");
                         break;
                     }
@@ -71,6 +65,9 @@ public class Input {
     public List<Piece> getPieces() {
         return pieces;
     }
+    public int[] getBoardDim() {
+        return new int[]{n, m};
+    }
 
     public void printStoredPieces() {
         for (Piece piece : pieces) {
@@ -79,7 +76,38 @@ public class Input {
             System.out.println();}
     }
     
+    public int getNpiece() {
+        return  p;
+    }
 }
+
+class Output {
+    public static void writeToFile(char[][] grid, long attempts, long timeTaken) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Save the solution? (yes/no): ");
+        String response = scanner.nextLine().trim().toLowerCase();
+        if (!response.equals("yes")) {return;}
+        
+        System.out.print("Save filename (with .txt): ");
+        String filename = scanner.nextLine();
+        String filePath = "test/" + filename;
+
+        try (FileWriter writer = new FileWriter(filePath)){
+            for (char[] row : grid) {
+                for (char cell : row) {
+                    writer.write(cell +" ");
+                }
+                writer.write("\n");
+            }
+            writer.write("\nAttempts: " + attempts);
+            writer.write("\nTime taken: " + timeTaken +" ms\n");
+            System.out.println("Solution saved to " +filePath);
+        } catch (IOException e) {
+            System.out.println("Error writing to file: " + e.getMessage());
+        }
+    }
+}
+
 
 
 

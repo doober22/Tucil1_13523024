@@ -1,0 +1,8 @@
+A A C B B 
+D A C C B 
+D D E E E 
+F F F E E 
+F F G G G 
+
+Attempts: 45
+Time taken: 3 ms

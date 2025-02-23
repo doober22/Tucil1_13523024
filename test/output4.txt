@@ -1,0 +1,7 @@
+A A B B B F F F 
+E A H H H I I I 
+E E E E G C C I 
+E D D G G G C C 
+
+Attempts: 299010
+Time taken: 682 ms

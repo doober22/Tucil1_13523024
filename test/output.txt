@@ -1,0 +1,7 @@
+C E A A A 
+C E A D D 
+C E B D F 
+C B B F F 
+
+Attempts: 3348
+Time taken: 27 ms

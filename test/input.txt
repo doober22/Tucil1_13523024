@@ -1,12 +1,12 @@
-4 4 5
+4 5 6
 DEFAULT
 AAA
 A
  B
 BB
-   C
 CCCC
 D
 DD
-D
-EEEEE
+FF
+ F
+EEE
